@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,18 +8,19 @@
 </head>
 <body>
     <div class="game-container">
+        <button id="darkModeToggle" class="dark-mode-toggle"></button>
         <h1>Guess the Number</h1>
         <p class="description">I am thinking of a number between 1 and 1000. You have 10 attempts to guess it!</p>
-        
+
         <div class="input-container">
             <input type="number" id="guessInput" class="guess-input" placeholder="Enter a number" min="1" max="1000" required>
             <button id="guessButton" class="guess-button">Guess</button>
         </div>
-        
+
         <div class="feedback-container">
             <p id="feedbackText" class="feedback-text"></p>
         </div>
-        
+
         <div class="previous-guesses">
             <h3>Your Previous Guesses:</h3>
             <ul id="guessesList"></ul>
@@ -26,7 +28,7 @@
 
         <button id="resetButton" class="reset-button">Play Again</button>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>

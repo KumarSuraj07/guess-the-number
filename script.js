@@ -14,13 +14,14 @@ function startGame() {
     document.getElementById('resetButton').style.display = 'none';
     document.getElementById('guessButton').disabled = false;
     document.getElementById('guessInput').disabled = false;
+    document.getElementById('feedbackText').style.color = ''; // Reset feedback text color
     document.getElementById('guessInput').focus();
 }
 
 // Handle guess
 function checkGuess() {
     const guess = parseInt(document.getElementById('guessInput').value);
-    
+
     if (isNaN(guess) || guess < 1 || guess > 1000) {
         document.getElementById('feedbackText').innerText = 'Please enter a number between 1 and 1000!';
         return;
@@ -30,7 +31,7 @@ function checkGuess() {
 
     let feedback = '';
     let hint = '';
-    
+
     if (guess === secretNumber) {
         feedback = `Congratulations! You've guessed the number in ${attempts} attempts.`;
         hint = '';
@@ -48,6 +49,7 @@ function checkGuess() {
     guesses.push({ guess, feedback: hint });
     displayGuesses();
     document.getElementById('feedbackText').innerText = feedback;
+    document.getElementById('guessInput').value = ''; // Clear input field after each attempt
 }
 
 // Display previous guesses
@@ -74,9 +76,15 @@ function endGame(won) {
     }
 }
 
+// Toggle Dark Mode
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+
 // Event listeners
 document.getElementById('guessButton').addEventListener('click', checkGuess);
 document.getElementById('resetButton').addEventListener('click', startGame);
+document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
 
 // Allow pressing Enter to submit guess
 document.getElementById('guessInput').addEventListener('keydown', function(event) {
