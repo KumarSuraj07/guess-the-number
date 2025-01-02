@@ -1,0 +1,134 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.guess-input {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.guess-input:focus {
+    border-color: #4caf50;
+}
+
+.guess-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.guess-button:hover {
+    background-color: #45a049;
+}
+
+.feedback-container {
+    margin-top: 20px;
+}
+
+.feedback-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff5722;
+}
+
+.previous-guesses {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+.previous-guesses h3 {
+    font-size: 18px;
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+#guessesList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#guessesList li {
+    margin-bottom: 5px;
+}
+
+.reset-button {
+    padding: 10px 20px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: #1976d2;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.game-container {
+    animation: fadeIn 0.5s ease-out;
+}
